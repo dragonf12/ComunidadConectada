@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad Conectada - Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Mantiene la imagen fija mientras se desplaza */
+            color: #0f0d0d;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            position: relative; /* Necesario para posicionar el overlay respecto al body */
+        }
+
+        .overlay {
+            position: fixed; /* La capa debe cubrir toda la pantalla */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(68, 64, 64, 0); /* Ajusta el color y la opacidad según necesites */
+            z-index: 1; /* Coloca esta capa sobre la imagen de fondo */
+            pointer-events: none; /* Permite que la capa no interfiera con la interacción del usuario */
+        }
+
+        header, p, h1, .main-header, .description, .cta, .testimonials, .main-footer, .header-container {
+            position: relative;
+            z-index: 2; /* Asegura que el contenido esté por encima del overlay */
+        }
+
+        .main-header {
+            background-color: #3f8541;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .main-header img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .description {
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 8px;
+        }
+
+        .description h2, .description h3 {
+            color: #56bc59;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 30px;
+            background-color: #34292928;
+        }
+
+        .cta button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta button:hover {
+            background-color: #45a049;
+        }
+
+        .testimonials {
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 700px;
+            max-height: auto;
+            border-radius: 8px;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        .testimonials blockquote {
+            margin: 20px;
+            padding: 20px;
+            border-left: 5px solid #4CAF50;
+            border-radius: 5px;
+        }
+        .testimonials blockquote img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+
+
+        }
+
+        .main-footer {
+            background-color: #333;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .main-footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .main-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .main-footer .contact-info, .main-footer .collaborators {
+            margin-bottom: 20px;
+        }
+
+        .header-container {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .logo-title {
+            font-size: 24px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            flex: 2;
+            max-width: 600px;
+            margin: 10px 0;
+            position: relative;
+            min-width: 250px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .search-bar button img {
+            height: 20px;
+            opacity: 0.6;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            justify-content: flex-end;
+            min-width: 200px;
+            
+        }
+
+        .contact-info img {
+            height: 25px;
+            opacity: 0.8;
+        }
+
+        .contact-info span {
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+            }
+
+            .search-bar {
+                order: 3;
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .nav-links {
+                order: 2;
+                width: 100%;
+                justify-content: space-around;
+                margin: 10px 0;
+            }
+
+            .contact-info {
+                order: 1;
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+   
+
+    <header class="header-container">
+        <div class="logo">
+            <a href="index.html" target="_blank">
+                <img src="Imagenes/Label/logo.png" alt="Logo de Comunidad Conectada">
+            </a>
+            <div class="logo-title">Comunidad Conectada</div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="Mapa.html">Mapa de Recursos</a>
+            <a href="RedDonacion.html">Donaciones y Voluntariado</a>
+            <a href="ProductoresLocales.html">Productos Locales</a>
+        </nav>
+        <div class="contact-info">
+            <img src="Imagenes/Label/logoWhats.png" alt="WhatsApp">
+            <span>(+55) 2299 6212 Soporte</span>
+        </div>
+    </header>
+
+    <!-- Encabezado Principal -->
+    <header class="main-header">
+        <h1>Comunidad Conectada</h1>
+        <p>Uniendo esfuerzos para mejorar la calidad de vida de nuestras comunidades vulnerables.</p>
+        <div class="image-placeholder">
+            <img src="Imagenes/Index/1.png" alt="Imagen De Inicio" >
+        </div>
+    </header>
+
+    <!-- Descripción General -->
+    <section class="description">
+        <h2>Propósito del Proyecto</h2>
+        <p>Comunidad Conectada busca ayudar a la comunidad uniendo esfuerzos entre personas, pequeños productores, organizaciones locales y servicios de salud para mejorar la calidad de vida de quienes más lo necesitan.</p>
+        <h3>Objetivos de Desarrollo Sostenible (ODS)</h3>
+        <p>Contribuimos a los ODS de Fin de la Pobreza, Hambre Cero, y Salud y Bienestar mediante el acceso a recursos esenciales y la promoción de la colaboración comunitaria.</p>
+    </section>
+
+    <!-- Llamadas a la Acción (CTA) -->
+    <section class="cta">
+        <button onclick="location.href='Mapa.html'">Explora los recursos de tu comunidad</button>
+        <button onclick="location.href='RedDonacion.html'">Ayuda a mejorar la vida de quienes más lo necesitan</button>
+        <button onclick="location.href='ProductoresLocales.html'">Compra productos locales y apoya la economía comunitaria</button>
+    </section>
+
+    <!-- Testimonios o Historias de Impacto -->
+    <section class="testimonials">
+        <section class="testimonials-titulo">
+            <h2>Historias de Impacto</h2>
+        </section>
+        <blockquote>
+            <img src="Imagenes/Index/refugiados1.webp" class="testimoniosImg">
+            <p>"Gracias a Comunidad Conectada, ahora tenemos acceso a alimentos frescos y apoyo médico que antes era imposible." - Familia Pérez</p>
+        </blockquote>
+        <blockquote>
+            <img src="Imagenes/Index/voluntario1.jpg" class="testimoniosImg">
+            <p>"El voluntariado me ha dado la oportunidad de conocer a gente maravillosa y ayudar a quienes más lo necesitan." - Juan López, voluntario</p>
+        </blockquote>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="main-footer">
+        <div class="contact-info2">
+            <h3>Contacto</h3>
+            <p>Para más información, visita nuestra página de <a href="ContactoVoluntario.html">Contacto</a> o síguenos en nuestras redes sociales.</p>
+        </div>
+        <div class="collaborators">
+            <h3>Colaboradores</h3>
+            <p>Gracias a las organizaciones y voluntarios que hacen posible este proyecto.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
