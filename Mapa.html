@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad Conectada - Mapa de Recursos Comunitarios</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .main-footer {
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 1000px;
+            background-color:#ffffff ;
+        }
+        .main-header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .section {
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 1000px;
+            border-radius: 8px;
+        }
+        .section h2, .section h3 {
+            color: #4CAF50;
+        }
+
+
+        .section1 {
+            padding: 40px;
+            background-color: #ffffff;
+            margin: 20px auto;
+            max-width: 1000px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section1 h2, .section1 h3 {
+            color: #4CAF50;
+        }
+
+
+        .section-categories {
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 1000px;
+            border-radius: 8px;
+        }
+        .section-categories h2 {
+            color: #4CAF50;
+        }
+        .section-categories h3 {
+            color: #53c391;
+
+        }
+        .categories {
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .category-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .map-features {
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 8px;
+        }
+        .map-features h2 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .call-to-action {
+            text-align: center;
+            padding: 30px;
+            background-color: #f9f9f9;
+        }
+        .call-to-action button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .call-to-action button:hover {
+            background-color: #45a049;
+        }
+        #map {
+            width: 100%;
+            height: 500px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+
+
+
+
+        .header-container {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        .logo-title {
+            font-size: 24px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .search-bar {
+            flex: 1;
+            max-width: 600px;
+            margin: 0 20px;
+            position: relative;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+        }
+        .search-bar button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+        .search-bar button img {
+            height: 20px;
+            opacity: 0.6;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact-info img {
+            height: 25px;
+            opacity: 0.8;
+        }
+        .contact-info span {
+            color: #333;
+            font-weight: bold;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <header class="header-container">
+        <div class="logo">
+            <a href="index.html" target="_blank">
+                <img src="Imagenes/Label/logo.png" alt="Logo de Comunidad Conectada" >
+            </a>
+            <div class="logo-title">Comunidad Conectada</div>
+        </div>
+        
+        
+        <nav class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="Mapa.html">Mapa de Recursos</a>
+            <a href="RedDonacion.html">Donaciones y Voluntariado</a>
+            <a href="ProductoresLocales.html">Productos Locales</a>
+        </nav>
+        <div class="contact-info">
+            <img src="Imagenes/Label/logoWhats.png" alt="WhatsApp">
+            <span>(+55) 2299 6212 Soporte</span>
+        </div>
+    </header>
+        
+
+
+
+
+
+
+
+    <!-- Encabezado Principal -->
+    <header class="main-header">
+        <h1>Mapa de Recursos Comunitarios</h1>
+        <p>Facilitando el acceso a los recursos esenciales de la comunidad.</p>
+    </header>
+
+    <!-- Introducción al Mapa -->
+    <section class="section">
+        <h2>Propósito del Mapa</h2>
+        <p>El mapa interactivo facilita a los usuarios encontrar recursos disponibles en su comunidad, mejorando el acceso a servicios básicos como alimentación, salud y apoyo económico. Nuestra misión es garantizar que cada familia tenga acceso fácil y rápido a los recursos que necesita para mejorar su calidad de vida.</p>
+        <h3>Instrucciones Básicas</h3>
+        <p>Utiliza el mapa para buscar recursos específicos. Puedes hacer clic en las ubicaciones para obtener más información y aplicar los filtros para personalizar tu búsqueda.</p>
+    </section>
+
+    <!-- Google Maps -->
+    <section class="section1">
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14979.747096398864!2d-90.14579219405088!3d20.178357850263378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85f87adb358cf54d%3A0x1039b4eeb7b02c74!2s24800%20Hecelchak%C3%A1n%2C%20Camp.!5e0!3m2!1ses!2smx!4v1731897256552!5m2!1ses!2smx" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Listado de Categorías de Recursos -->
+    <section class="section-categories">
+        <h2>Categorías de Recursos</h2>
+        <div class="category-item">
+            <h3>Comedores Comunitarios</h3>
+            <p>Lugares donde se brinda comida gratuita o a bajo costo para familias vulnerables. Encuentra comedores comunitarios cercanos y accede a alimentos nutritivos.</p>
+        </div>
+        <div class="category-item">
+            <h3>Centros de Salud</h3>
+            <p>Ubicaciones de centros de salud, clínicas y hospitales que ofrecen servicios gratuitos o a precios accesibles.</p>
+        </div>
+        <div class="category-item">
+            <h3>Puntos de Donación</h3>
+            <p>Sitios donde los usuarios pueden donar o recibir recursos como alimentos, ropa, medicinas, y otros artículos esenciales.</p>
+        </div>
+        <div class="category-item">
+            <h3>Productores Locales</h3>
+            <p>Pequeños productores que venden alimentos frescos a precios accesibles, fomentando el consumo local y la sostenibilidad comunitaria.</p>
+        </div>
+    </section>
+
+    <!-- Funcionalidades del Mapa -->
+    <section class="map-features">
+        <h2>Funcionalidades del Mapa</h2>
+        <p>El mapa permite a los usuarios interactuar haciendo clic en diferentes ubicaciones para obtener información detallada de cada recurso. Utiliza los filtros disponibles para categorizar los recursos por tipo (alimentación, salud, ayuda económica) y encuentra rápidamente lo que necesitas. Además, puedes ver los recursos más cercanos a tu ubicación actual para facilitar la accesibilidad.</p>
+    </section>
+
+    <!-- Ejemplos de Uso -->
+    <section class="section">
+        <h2>Ejemplos de Uso</h2>
+        <p>María, una madre de dos niños, encontró un comedor comunitario cercano que ofrece comida nutritiva diariamente. Gracias a nuestro mapa, ella pudo acceder rápidamente a este recurso que ha hecho una gran diferencia en su vida.</p>
+    </section>
+
+    <!-- Beneficios del Mapa -->
+    <section class="section">
+        <h2>Beneficios del Mapa</h2>
+        <p>El mapa ayuda a maximizar la eficiencia de los recursos comunitarios, conectando a las familias con los servicios esenciales de manera rápida y sencilla. Promueve la colaboración entre la comunidad y las organizaciones locales, asegurando que ningún recurso quede sin ser utilizado y que todas las familias tengan acceso a los servicios básicos.</p>
+    </section>
+
+    <!-- Llamada a la Acción -->
+    <section class="call-to-action">
+        <button onclick="location.href='ComoMaps.html'">Contribuye al mapa y agrega puntos de interés en tu comunidad</button>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="main-footer">
+        <div class="contact-info">
+            <h3>Contacto</h3>
+            <p>Para más información, visita nuestra página de <a href="ContactoVoluntario.html">Contacto</a> o síguenos en nuestras redes sociales.</p>
+        </div>
+        <div class="collaborators">
+            <h3>Colaboradores</h3>
+            <p>Gracias a las organizaciones y voluntarios que hacen posible este proyecto.</p>
+        </div>
+    </footer>
+</body>
+</html>
